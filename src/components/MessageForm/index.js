@@ -37,6 +37,7 @@ export default function MessageForm({
 
   async function submitHandler(e) {
     e.preventDefault();
+    let error = false;
 
     const data = {
       name,
@@ -45,8 +46,11 @@ export default function MessageForm({
       message,
     };
 
-    if (!validator.contains(message, name)) {
+    if (!validator.contains(message.toLowerCase(), name.toLowerCase())) {
       try {
+        if (!validator.isEmail(email)) {
+          throw new Error('Please, input an valid email.');
+        }
         setCurrentState('loading');
         const response = await sendMessage(data);
         const responseData = await response.json();
@@ -57,13 +61,12 @@ export default function MessageForm({
             type: 'info',
           });
         }
+        setCurrentState('inactive');
       } catch (e) {
         toast(`Unable to sent. (${e.message})`, {
           autoClose: 2000,
           type: 'error',
         });
-      } finally {
-        setCurrentState('inactive');
       }
     } else {
       toast('The message must not contain your name.', { type: 'error' });
@@ -107,16 +110,23 @@ export default function MessageForm({
                   setMessage(e.target.value);
                 }}
               ></textarea>
-              {name && message && validator.contains(message, name) && (
-                <span className="error">
-                  The message must not contain your name.
-                </span>
-              )}
+              {name &&
+                message &&
+                validator.contains(
+                  message.toLowerCase(),
+                  name.toLowerCase(),
+                ) && (
+                  <span className="error">
+                    The message must not contain your name.
+                  </span>
+                )}
 
               <p>
-                This message will only be shown forward after your friends
-                choice to see or not the message, by an eletronic confirmation.
-                It must not contain your name.
+                The message will be sent after your confirmation. Your name will
+                only be visible to {receiverEmail} once they accept it, so
+                please ensure this message does not include your name. As this
+                is a demo, messages will not be encrypted in our database. Feel
+                free to test it, but do not share any personal data. 😉
               </p>
               <Button type="submit" onClick={submitHandler}>
                 Send

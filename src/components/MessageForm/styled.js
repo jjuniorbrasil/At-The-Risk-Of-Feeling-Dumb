@@ -48,6 +48,7 @@ export const Form = styled.form`
 
   @media screen and (min-width: 1280px) {
     flex-basis: 50vh;
+    width: 50%;
     padding: 2%;
   }
 `;
