@@ -59,11 +59,11 @@ export default function MainForm({ checkInHandler, email, setEmail }) {
           type="submit"
           onClick={(e) => {
             e.preventDefault();
-            checkEmail(email);
-            // fetch('/api/')
-            //   .then((data) => data.json())
-            //   .then(console.log)
-            //   .catch((e) => console.log(e));
+            //checkEmail(email);
+            fetch('/api/messages/')
+              .then((data) => data.json())
+              .then(console.log)
+              .catch((e) => console.log(e));
           }}
         >
           CHECK IN

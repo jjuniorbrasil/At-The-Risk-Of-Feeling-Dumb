@@ -13,10 +13,10 @@ class ReceiversController {
 
   async getById(req, res) {
     try {
-      const receiver = await ReceiverService.getById(db, req.params.email)
+      const receiver = await ReceiverService.getById(db, req.params.email);
       res.status(200).send(receiver);
     } catch (e) {
-      res.status(400).send({ error: e.message });
+      res.status(404).send({ error: e.message, sign: 'jun' });
     }
   }
 }
