@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Alfredino';
+  src: url(./fonts//Alfredino\ Semimono.ttf);
+}
+
+.message-about {
+  margin-top: 1em;
+}
+
+.message-button {
+  margin: 10px;
+}
+
+.message-answer {
+  color: #e03d2e;
+  margin: 20px;
+}
+
+.message-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message-box {
+  outline: 1px dotted black;
+  width: 90%;
+  height: 100%;
+  padding: 1em;
+  margin: 20px;
+}
+
+.message-response-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px;
+
+  p {
+    font-size: 0.8em;
+    text-align: center;
+  }
+}
