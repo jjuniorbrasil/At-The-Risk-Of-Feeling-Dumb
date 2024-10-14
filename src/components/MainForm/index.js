@@ -60,6 +60,10 @@ export default function MainForm({ checkInHandler, email, setEmail }) {
           onClick={(e) => {
             e.preventDefault();
             checkEmail(email);
+            // fetch('/api/')
+            //   .then((data) => data.json())
+            //   .then(console.log)
+            //   .catch((e) => console.log(e));
           }}
         >
           CHECK IN
