@@ -5,5 +5,10 @@
       "src": "/api/(.*)",
       "dest": "/api/index.js"
     }
-  ]
+  ],
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30 // This function can run for a maximum of 30 seconds
+    }
+  }
 }
