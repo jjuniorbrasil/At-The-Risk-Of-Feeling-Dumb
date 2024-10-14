@@ -116,7 +116,7 @@ export default function MessageForm({
               <p>
                 This message will only be shown forward after your friends
                 choice to see or not the message, by an eletronic confirmation.
-                It must contain your name.
+                It must not contain your name.
               </p>
               <Button type="submit" onClick={submitHandler}>
                 Send

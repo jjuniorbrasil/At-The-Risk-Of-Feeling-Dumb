@@ -5,7 +5,6 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   flex-basis: 100vh;
-  margin-bottom: 36px;
   align-items: center;
 
   section {
@@ -16,6 +15,11 @@ export const Box = styled.div`
 
   @media screen and (max-width: 896px) {
     font-size: 24px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    height: 100vh;
   }
 
   span {

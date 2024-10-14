@@ -45,4 +45,9 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: space-around;
   gap: 10px;
+
+  @media screen and (min-width: 1280px) {
+    flex-basis: 50vh;
+    padding: 2%;
+  }
 `;

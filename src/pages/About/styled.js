@@ -15,7 +15,6 @@ export const Box = styled.div`
   flex-direction: column;
   height: 100%;
   align-items: center;
-  margin: 1em 0;
 
   section {
     width: 100%;
@@ -40,5 +39,10 @@ export const Box = styled.div`
     &:hover {
       color: ${colors.secondaryColor};
     }
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 24px;
+    width: 70%;
   }
 `;

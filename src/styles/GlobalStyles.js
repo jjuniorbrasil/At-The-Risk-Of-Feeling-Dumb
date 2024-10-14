@@ -13,6 +13,13 @@ const GlobalStyles = createGlobalStyle`
     font-family: "Alfredino";
   }
 
+  #root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .black-overlay {
     display: flex;
     flex-direction: column;
@@ -23,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     height: 100%;
     top: 0;
+    left: 0;
   }
 `;
 
@@ -47,6 +55,14 @@ const Container = styled.div`
   flex-direction: ${(props) => (props.flexColumn ? 'column' : 'row')};
   justify-content: ${(props) => (props.justify ? 'center' : 'auto')};
   align-items: ${(props) => (props.align ? 'center' : 'auto')};
+
+  @media screen and (min-width: 768px) {
+    width: 80%;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`

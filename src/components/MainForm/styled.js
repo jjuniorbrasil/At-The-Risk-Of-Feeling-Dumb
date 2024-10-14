@@ -7,6 +7,11 @@ const Form = styled.form`
   height: ${(props) => (props.maxHeight ? '100%' : 'auto')};
   display: flex;
   flex-direction: column;
+  margin-bottom: 36px;
+
+  @media screen and (min-width: 1280px) {
+    margin: 1em;
+  }
 
   .wrapper {
     position: relative;

@@ -28,6 +28,10 @@ export const Box = styled.div`
     font-size: 24px;
   }
 
+  @media screen and (min-width: 1440px) {
+    font-size: 24px;
+  }
+
   span {
     text-decoration: underline 2px ${colors.primaryColor};
     text-underline-offset: 5px;

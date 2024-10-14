@@ -4,6 +4,7 @@ import About from '../About';
 import { Title, Box } from './styled';
 import { Link, Button } from '../../styles/GlobalStyles';
 import { useParams } from 'react-router-dom';
+import NavBar from '../../components/NavBar';
 
 const url = `/api/messages/`;
 
@@ -80,22 +81,7 @@ export default function MessagePage() {
           pending={pending}
           sender={sender}
         />
-        <Link
-          className=""
-          onClick={() => {
-            setWhatsThis(!whatsThis);
-          }}
-        >
-          What&apos;s this?
-        </Link>
-        <section>
-          {whatsThis && (
-            <>
-              <About withoutTitle={true}></About>
-            </>
-          )}
-        </section>
-        <Link to="/">Home</Link>
+        <NavBar />
       </Box>
     </>
   );

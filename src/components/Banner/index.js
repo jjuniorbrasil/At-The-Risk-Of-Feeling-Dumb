@@ -9,11 +9,12 @@ export default function Banner() {
     <>
       <Container>
         <Image src={imgOhio} />
-        <NavBar/>
+        <NavBar />
         <Paragraph>
           This page's sole purpose is to offer a direct approach to a person you
           love and cares. You run the risk of feeling dumb, but know that you're
           not.
+         
         </Paragraph>
       </Container>
     </>

@@ -44,7 +44,6 @@ class MailerService {
   }
 
   async sendAnswerToSender(data) {
-    const domain = 'https://at-the-risk-of-feeling-dumb.vercel.app/';
     const means =
       data.receiverResponse == 'accepted' ? 'knows' : "doesn't knows";
     const info = await transporter.sendMail({
@@ -71,14 +70,16 @@ class MailerService {
     const info = await transporter.sendMail({
       from: '"At The Risk of Feeling Dumb" <atrofdmessage@gmail.com>', // sender address
       to: data.receiverEmail, // list of receivers
-      subject: "Hey, someone've been thinking of you.", // Subject line
+      subject: 'Hey, there is someone who cares.', // Subject line
       //text: 'Hello world?', // plain text body
       html: `
       <div>
         <h1 style="color: #E03D2E; font-family: sans-serif">AT THE RISK OF FEELING DUMB</h1>
         <b>Hey, <b>${data.receiverEmail}</b>. Hope you're doing well, as well!</b>
         <p>You have a new message from someone that cares about you and possibly wants to talk. To see it, <a href="${domain}/message/${messageId}">click here</a></b>.
-        <p style="font-style: italic">It's up to you choose between to accept or decline this request. Your sender will know your choice.</p>
+        <p style="font-style: italic">You can read the message and it's up to you choose between to accept or decline this proposal. Know that your sender will know your choice and
+        you'll only be able to know it's identity if you accept.</p>
+        <p>Clicking the link won't do nothing. Be free to visit the page and know more about the platform!</p>
         </p>
       </div>`, // html body
     });
