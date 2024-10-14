@@ -1,4 +1,4 @@
-const url = `api/receivers/`;
+const url = `/api/receivers/`;
 export default async function request(email) {
   const data = await fetch(url + `${email}`);
   const response = await data.json();
