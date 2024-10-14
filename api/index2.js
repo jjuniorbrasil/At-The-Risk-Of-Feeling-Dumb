@@ -1,5 +1,6 @@
 // REQUIRE
 
+require('dotenv').config();
 const express = require('express');
 const routes = require('./routes');
 const cors = require('cors');
@@ -24,4 +25,4 @@ app.use('/api', routes.home);
 app.use('/api/receivers/', routes.receivers);
 app.use('/api/messages/', routes.messages);
 
-module.exports.app = app;
+module.exports = app;
