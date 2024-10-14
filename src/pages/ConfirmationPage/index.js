@@ -16,8 +16,7 @@ export default function ConfirmationPage() {
     let ignore = false;
     const fetchData = async () => {
       try {
-        const ip = '192.168.0.39';
-        const url = `http://${ip}:3000/messages/${mid}?confirm=true`;
+        const url = `/api/messages/${mid}?confirm=true`;
 
         if (!ignore) {
           const response = await fetch(url, {
@@ -29,7 +28,6 @@ export default function ConfirmationPage() {
           }
 
           const data = await response.json();
-          console.log(data);
 
           // Suponha que a resposta contenha username e receiver
           setUsername(data.name);

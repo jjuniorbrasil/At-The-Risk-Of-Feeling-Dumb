@@ -27,7 +27,7 @@ export default function MessageForm({
   });
 
   async function sendMessage(data) {
-    return await fetch('http://192.168.0.39:3000/', {
+    return await fetch('/api/', {
       method: 'POST',
       mode: 'cors',
       headers: { 'Content-Type': 'application/json' },

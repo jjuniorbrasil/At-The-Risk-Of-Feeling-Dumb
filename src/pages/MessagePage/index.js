@@ -5,8 +5,7 @@ import { Title, Box } from './styled';
 import { Link, Button } from '../../styles/GlobalStyles';
 import { useParams } from 'react-router-dom';
 
-const ip = '192.168.0.39';
-const url = `http://${ip}:3000/messages/`;
+const url = `/api/messages/`;
 
 export default function MessagePage() {
   const { mid } = useParams();
