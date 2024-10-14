@@ -1,7 +1,5 @@
 async function requesting() {
-  const pessoas = fetch('/receivers').then((data) =>
-    data.json(),
-  );
+  const pessoas = fetch('/receivers').then((data) => data.json());
   return pessoas;
 }
 
